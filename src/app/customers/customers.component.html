@@ -9,11 +9,59 @@
 <p>
   <b>Customers</b>
   <br/>
-  <button type="button" class="btn btn-secondary ">
-      Add Customers 
-      <span class="sr-only"></span>
-     </button>
-</p>  
+</p> 
+<form>
+    <fieldset>
+        <legend><h6>Customer Profile</h6></legend>
+        <button type="button" class="btn btn-secondary ">
+            Add Customers 
+            <span class="sr-only"></span>
+           </button>
+           <div class="float-right col-2">
+           <input type="text" placeholder="Search.." name="Search"  placeholder="Search Customers">
+          </div>
+          <br/>
+          <br/>
+        <table>
+          <td width="1000">
+        <div class="form-group row">
+            <div class="col-6">
+              <input class="form-control" id="" type="text" placeholder="Name and Surname">
+            </div>
+            <div class="col-5">
+              <input class="form-control" id="" type="text" placeholder="Email Adress">
+            </div>
+          </div>
+          <div class="form-group row">
+              <div class="col-6">
+                <input class="form-control" id="" type="text" placeholder="ID Number">
+              </div>
+              <div class="col-5">
+                <input class="form-control" id="" type="text" placeholder="Contact Number">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-6">
+                  <input class="form-control" id="" type="text" placeholder="Nationality">
+              </div>
+            </div>
+            <div class ="row">
+                <div class="col-6">
+                    <input class="form-control" id="" type="text" placeholder="Location">
+                </div>
+              </div> 
+            </td>
+            <td>
+                <img src="../img/download.jpg" alt="..." class="img-thumbnail" style="width: 280px; height: 180px;">  
+            </td>
+            </table>
+    </fieldset>
+</form>
+<br/>
+<br/>
+<div align="center">
+    <p><b>List of Customer  </b></p>
+</div>
 <div id="table" >
   <table class="table table-bordered table-striped">
     <thead>
