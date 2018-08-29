@@ -10,7 +10,10 @@
   WorkSpace
   <br/>
 </p>
-<div class="btn-group">
+<form>
+<fieldset>
+    <legend><h6>Work Request</h6></legend>
+ <div class="btn-group">
     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      Select Vehicle Make
      <span class="sr-only"></span>
@@ -54,6 +57,8 @@
 <div class=" ">
     <textarea class="form-control" rows="5" id="comment" placeholder="Type in problem or service reguired..."></textarea>  
 </div>
+</fieldset>
+</form> 
 <br/>
 <br/>
 <div align="center">
@@ -61,7 +66,10 @@
 </div>
 
 <div id="table" >
-    <input class="form-control" id="myInput" type="text" placeholder="Search for Machanic">
+    <div class="inner-addon right-addon">
+        <i class="glyphicon glyphicon-search"></i>
+        <input type="text" class="form-control" placeholder="Search" />
+      </div>
   <br>
   <table class="table table-bordered table-striped">
     <thead>
