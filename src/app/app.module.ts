@@ -23,8 +23,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     BrowserModule,
     RouterModule.forRoot([
       {
-        path: '', redirectTo: '/Workplace', pathMatch: 'full'
-        },
+        path: '', component: WorkplaceComponent
+      },
       {
         path: 'Customer', component: CustomersComponent
       },
