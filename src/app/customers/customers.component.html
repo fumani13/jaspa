@@ -9,56 +9,60 @@
   <br/>
 </p> 
 <form>
-    <button type="button" class="btn btn-secondary ">
-        Add Customers 
-        <span class="sr-only"></span>
-       </button>
-       <div class="float-right col-2">
-          <input type="text" placeholder="Search.." name="Search"  placeholder="Search Customers">
-         </div>
     <fieldset>
+
         <legend><h6>Customer Profile</h6></legend>
+        <div class=" float-right col-2">
+            <input  class="form-control" type="text" placeholder="Search.." name="Search" placeholder="Search Customers">
+           </div>
         <table>
           <td width="1000">
         <div class="form-group row">
             <div class="col-6">
-              <input class="form-control" id="" type="text" placeholder="Name and Surname">
+              <input class="form-control" [(ngModel)] ="firstname" type="text" placeholder="Name and Surname" name="firstname" >
             </div>
             <div class="col-5">
-              <input class="form-control" id="" type="text" placeholder="Email Adress">
+              <input class="form-control" [(ngModel)] ="email" type="text" placeholder="Email Adress" name="email">
             </div>
           </div>
           <div class="form-group row">
               <div class="col-6">
-                <input class="form-control" id="" type="text" placeholder="ID Number">
+                <input class="form-control" [(ngModel)] ="idnumber" type="text" placeholder="ID Number" name="idnumber">
               </div>
               <div class="col-5">
-                <input class="form-control" id="" type="text" placeholder="Contact Number">
+                <input class="form-control" [(ngModel)] ="contact" type="text" placeholder="Contact Number" name="contact">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-6">
-                  <input class="form-control" id="" type="text" placeholder="Nationality">
+                  <input class="form-control" [(ngModel)] ="nationality" type="text" placeholder="Nationality" name="nationality">
               </div>
             </div>
             <div class ="row">
                 <div class="col-6">
-                    <input class="form-control" id="" type="text" placeholder="Location">
+                    <input class="form-control" [(ngModel)] ="custlocation" type="text" placeholder="Location" name="custlocation">
                 </div>
               </div> 
             </td>
             <td>
-                <img src="../img/download.jpg" alt="..." class="img-thumbnail" style="width: 280px; height: 180px;">  
+                <img src="" alt="..." class="img-thumbnail" style="width: 280px; height: 180px;">  
             </td>
             </table>
     </fieldset>
+    <br>
+    <div >
+    <button type="button" (click)="add()" class="btn btn-secondary ">
+      Add Customers 
+      <span class="sr-only"></span>
+     </button>
+    </div>
 </form>
 <br/>
 <br/>
 <div align="center">
     <p><b>List of Customer  </b></p>
 </div>
-<div id="table" >
+<div >
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -69,29 +73,14 @@
       </tr>
     </thead>
     <tbody id="myTable">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      
+      <tr *ngFor="let customer of custom  | async">
+        <td>{{customer.firstname}}</td>
+        <td>{{customer.contact}}</td>
+        <td>{{customer.email}}</td>
+        <td><button type="button" (click)="update(customer)" >Edit...</button>
+          <button type="button" (click)="delete(customer)">delete</button>
+        </td>
       </tr>
     </tbody>
   </table>

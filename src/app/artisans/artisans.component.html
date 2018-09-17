@@ -7,94 +7,75 @@
 <p>
  <b>Artisans</b> 
  <br>
- <br>
-  <button type="button" class="btn btn-secondary ">
-      Add Customers 
-      <span class="sr-only"></span>
-     </button>
 </p>
-<form>
+<form >
     <fieldset>
         <legend><h6>Artisan Profile</h6></legend>
         <table>
           <td width="1000">
         <div class="form-group row">
             <div class="col-6">
-              <input class="form-control" id="" type="text" placeholder="Name and Surname">
+              <input class="form-control" name="firstname" [(ngModel)] ="firstname"  type="text" placeholder="Name and Surname">
             </div>
             <div class="col-5">
-              <input class="form-control" id="" type="text" placeholder="Email Adress">
+              <input class="form-control" name="email" [(ngModel)] ="email" type="text" placeholder="Email Adress">
             </div>
           </div>
           <div class="form-group row">
               <div class="col-6">
-                <input class="form-control" id="" type="text" placeholder="ID Number">
+                <input class="form-control" name="idnumber" [(ngModel)] ="idnumber"  placeholder="ID Number">
               </div>
               <div class="col-5">
-                <input class="form-control" id="" type="text" placeholder="Contact Number">
+                <input class="form-control" name="contact" [(ngModel)] ="contact" type="text" placeholder="Contact Number">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-6">
-                  <input class="form-control" id="" type="text" placeholder="Nationality">
+                  <input class="form-control" name="nationality" [(ngModel)] ="nationality" type="text" placeholder="Nationality">
               </div>
             </div>
             <div class ="row">
                 <div class="col-6">
-                    <input class="form-control" id="" type="text" placeholder="Location">
+                    <input class="form-control" name="artisanlocation" [(ngModel)] ="artisanlocation" type="text" placeholder="Location">
                 </div>
               </div> 
             </td>
             <td>
-                <img src="../img/download.jpg" alt="..." class="img-thumbnail" style="width: 280px; height: 180px;">  
+                <img src="" alt="..." class="img-thumbnail" style="width: 280px; height: 180px;">  
             </td>
             </table>
-
     </fieldset>
+    <br>
+    <button type="button" (click)="add()" class="btn btn-secondary ">Add Customers <span class="sr-only"></span> </button>
     </form> 
-<br/>
 <br/>
 <br/>
 <div align="center">
     <p><b>List of Artisans Registerd  </b></p>
 </div>
 <div id="table" >
+  <div >
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Machanic</th>
-        <th>Distance</th>
-        <th>Speciality</th>
+        <th>Name and Surname</th>
+        <th>Contact No</th>
+        <th>Email</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody id="myTable">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let artisan of artisa  | async">
+        <td>{{artisan.firstname}}</td>
+        <td>{{artisan.contact}}</td>
+        <td>{{artisan.email}}</td>
+        <td><button type="button" (click)="update(artisan)" >Edit...</button>
+          <button type="button" (click)="delete(artisan)">delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
+</div>
 </div>
 </div>
 </div>

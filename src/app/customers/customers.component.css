@@ -1,4 +1,4 @@
-button {
+.save {
     background-image: url("../img/addicon.jpg");
     background-repeat: no-repeat;
     background-size: 30px 30px;
@@ -6,6 +6,6 @@ button {
     background-color: whitesmoke;
     text-align: center;
     height: 50px;
-    width: 15%;
+    width: 20%;
     color: black;
  }
